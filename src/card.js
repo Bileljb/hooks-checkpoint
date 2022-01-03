@@ -1,4 +1,5 @@
-import {Card} from "react-bootstrap"
+import {Card, Button} from "react-bootstrap"
+import {Link} from 'react-router-dom'
 function MCard(props) {
     return (
         <div>
@@ -18,6 +19,7 @@ function MCard(props) {
                     <Card.Text>
                         {props.el.id}
                     </Card.Text>
+                    <Link  to={`/details/${props.el.id}`} ><Button variant="primary">Details</Button></Link>
                 </Card.Body>
             </Card>
         </div>

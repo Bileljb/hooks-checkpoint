@@ -3,7 +3,8 @@ import List from './list'
 import Add from './add';
 import { useState } from 'react';
 import Search from './search';
-
+import {Route} from 'react-router-dom'
+import Details from './details';
 function App() {
   
   const [search, setSearch] = useState("")
@@ -176,9 +177,10 @@ function App() {
     <div className="App">
       <Search    setRate={setRate} rate={rate}  setSearch={setSearch} search = {search}></Search>
       <Add moviedata= {moviedata}  setMoviedata={setMoviedata}></Add>
-      <List    rate={rate}  search={search} moviedata={moviedata}></List>
+      <Route path ={'/'} > <List    rate={rate}  search={search} moviedata={moviedata}></List> </Route>
+      <Route path= {'details/:id'}   render={(props)=> <Details {...props} moviedata={moviedata}></Details>} ></Route>
       
-    </div>
+    </div>  
   );
 }
 

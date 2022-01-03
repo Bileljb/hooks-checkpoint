@@ -1,7 +1,5 @@
 import {FormControl, Button, Container, Form, Navbar} from 'react-bootstrap'
 import Rating from './rating';
-import { useState } from "react";
-
 function Search(props) {
 
     return (
